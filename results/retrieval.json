@@ -1,0 +1,6860 @@
+{
+  "created": "2026-11-18 22:23:11",
+  "seconds": 16.3,
+  "n_questions": 50,
+  "ks": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "embed_backend": "fastembed",
+  "embedders": {
+    "code": {
+      "model": "jinaai/jina-embeddings-v2-base-code",
+      "description": "Code-specific model (Jina v2 base code, trained on code/text pairs)"
+    },
+    "general": {
+      "model": "BAAI/bge-base-en-v1.5",
+      "description": "General-purpose English text model (BGE base v1.5)"
+    }
+  },
+  "chunk_stats": {
+    "ast": {
+      "requests": {
+        "chunker": "ast",
+        "n_chunks": 275,
+        "n_files": 19,
+        "avg_lines": 19.7,
+        "max_lines": 122,
+        "dense": [
+          "code",
+          "general"
+        ]
+      },
+      "flask": {
+        "chunker": "ast",
+        "n_chunks": 359,
+        "n_files": 24,
+        "avg_lines": 24.0,
+        "max_lines": 141,
+        "dense": [
+          "code",
+          "general"
+        ]
+      },
+      "starlette": {
+        "chunker": "ast",
+        "n_chunks": 430,
+        "n_files": 35,
+        "avg_lines": 15.0,
+        "max_lines": 93,
+        "dense": [
+          "code",
+          "general"
+        ]
+      }
+    },
+    "fixed": {
+      "requests": {
+        "chunker": "fixed",
+        "n_chunks": 196,
+        "n_files": 19,
+        "avg_lines": 38.5,
+        "max_lines": 40,
+        "dense": [
+          "code",
+          "general"
+        ]
+      },
+      "flask": {
+        "chunker": "fixed",
+        "n_chunks": 304,
+        "n_files": 24,
+        "avg_lines": 38.9,
+        "max_lines": 40,
+        "dense": [
+          "code",
+          "general"
+        ]
+      },
+      "starlette": {
+        "chunker": "fixed",
+        "n_chunks": 237,
+        "n_files": 35,
+        "avg_lines": 37.8,
+        "max_lines": 40,
+        "dense": [
+          "code",
+          "general"
+        ]
+      }
+    }
+  },
+  "configs": {
+    "ast+code": {
+      "recall@1": 0.64,
+      "recall@3": 0.9,
+      "recall@5": 0.96,
+      "recall@10": 0.96,
+      "file_recall@1": 0.84,
+      "file_recall@3": 0.98,
+      "file_recall@5": 1.0,
+      "file_recall@10": 1.0,
+      "mrr@10": 0.7717,
+      "file_acc@1": 0.84,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.7647,
+          "recall@3": 0.9412,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.9412,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8578,
+          "file_acc@1": 0.9412,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.5294,
+          "recall@3": 0.8235,
+          "recall@5": 0.9412,
+          "recall@10": 0.9412,
+          "file_recall@1": 0.7647,
+          "file_recall@3": 0.9412,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.6863,
+          "file_acc@1": 0.7647,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.625,
+          "recall@3": 0.9375,
+          "recall@5": 0.9375,
+          "recall@10": 0.9375,
+          "file_recall@1": 0.8125,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7708,
+          "file_acc@1": 0.8125,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 1.0,
+          "file_acc@1": 1.0,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.7647,
+          "recall@3": 0.9412,
+          "recall@5": 0.9412,
+          "recall@10": 0.9412,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 0.9412,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8529,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.4615,
+          "recall@3": 0.8462,
+          "recall@5": 0.9615,
+          "recall@10": 0.9615,
+          "file_recall@1": 0.7692,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.6571,
+          "file_acc@1": 0.7692,
+          "n": 26
+        }
+      }
+    },
+    "ast+general": {
+      "recall@1": 0.68,
+      "recall@3": 0.92,
+      "recall@5": 0.98,
+      "recall@10": 1.0,
+      "file_recall@1": 0.9,
+      "file_recall@3": 1.0,
+      "file_recall@5": 1.0,
+      "file_recall@10": 1.0,
+      "mrr@10": 0.8102,
+      "file_acc@1": 0.9,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.9412,
+          "recall@3": 0.9412,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.9412,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.9529,
+          "file_acc@1": 0.9412,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.5882,
+          "recall@3": 0.8824,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8235,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7584,
+          "file_acc@1": 0.8235,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.5,
+          "recall@3": 0.9375,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.9375,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7135,
+          "file_acc@1": 0.9375,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 0.8571,
+          "recall@3": 0.8571,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8929,
+          "file_acc@1": 1.0,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.6471,
+          "recall@3": 0.8824,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7878,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.6538,
+          "recall@3": 0.9615,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8846,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8026,
+          "file_acc@1": 0.8846,
+          "n": 26
+        }
+      }
+    },
+    "ast+bm25": {
+      "recall@1": 0.56,
+      "recall@3": 0.82,
+      "recall@5": 0.88,
+      "recall@10": 0.98,
+      "file_recall@1": 0.78,
+      "file_recall@3": 0.96,
+      "file_recall@5": 0.96,
+      "file_recall@10": 1.0,
+      "mrr@10": 0.697,
+      "file_acc@1": 0.78,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.5882,
+          "recall@3": 0.8235,
+          "recall@5": 0.8824,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 0.9412,
+          "file_recall@5": 0.9412,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7044,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.5882,
+          "recall@3": 0.8824,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.7059,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7471,
+          "file_acc@1": 0.7059,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.5,
+          "recall@3": 0.75,
+          "recall@5": 0.8125,
+          "recall@10": 0.9375,
+          "file_recall@1": 0.75,
+          "file_recall@3": 0.9375,
+          "file_recall@5": 0.9375,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.636,
+          "file_acc@1": 0.75,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 0.7143,
+          "recall@3": 0.7143,
+          "recall@5": 0.8571,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7704,
+          "file_acc@1": 1.0,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.6471,
+          "recall@3": 0.9412,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8235,
+          "file_recall@3": 0.9412,
+          "file_recall@5": 0.9412,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7721,
+          "file_acc@1": 0.8235,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.4615,
+          "recall@3": 0.7692,
+          "recall@5": 0.8462,
+          "recall@10": 0.9615,
+          "file_recall@1": 0.6923,
+          "file_recall@3": 0.9615,
+          "file_recall@5": 0.9615,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.6282,
+          "file_acc@1": 0.6923,
+          "n": 26
+        }
+      }
+    },
+    "ast+hybrid": {
+      "recall@1": 0.72,
+      "recall@3": 0.94,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "file_recall@1": 0.86,
+      "file_recall@3": 1.0,
+      "file_recall@5": 1.0,
+      "file_recall@10": 1.0,
+      "mrr@10": 0.834,
+      "file_acc@1": 0.86,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.8235,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.902,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.7059,
+          "recall@3": 0.9412,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8235,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8382,
+          "file_acc@1": 0.8235,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.625,
+          "recall@3": 0.875,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.875,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7573,
+          "file_acc@1": 0.875,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 0.7143,
+          "recall@3": 0.8571,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8214,
+          "file_acc@1": 1.0,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.7059,
+          "recall@3": 0.9412,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8235,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8284,
+          "file_acc@1": 0.8235,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.7308,
+          "recall@3": 0.9615,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8462,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.841,
+          "file_acc@1": 0.8462,
+          "n": 26
+        }
+      }
+    },
+    "fixed+code": {
+      "recall@1": 0.66,
+      "recall@3": 0.88,
+      "recall@5": 0.94,
+      "recall@10": 1.0,
+      "file_recall@1": 0.84,
+      "file_recall@3": 0.94,
+      "file_recall@5": 0.96,
+      "file_recall@10": 1.0,
+      "mrr@10": 0.7866,
+      "file_acc@1": 0.84,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.7059,
+          "recall@3": 0.9412,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 0.9412,
+          "file_recall@5": 0.9412,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8301,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.4118,
+          "recall@3": 0.7059,
+          "recall@5": 0.8824,
+          "recall@10": 1.0,
+          "file_recall@1": 0.6471,
+          "file_recall@3": 0.8824,
+          "file_recall@5": 0.9412,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.6011,
+          "file_acc@1": 0.6471,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.875,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.9375,
+          "file_acc@1": 1.0,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 0.5714,
+          "recall@3": 0.8571,
+          "recall@5": 0.8571,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8571,
+          "file_recall@3": 0.8571,
+          "file_recall@5": 0.8571,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7302,
+          "file_acc@1": 0.8571,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.7647,
+          "recall@3": 0.8824,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8235,
+          "file_recall@3": 0.8824,
+          "file_recall@5": 0.9412,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.8418,
+          "file_acc@1": 0.8235,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.6154,
+          "recall@3": 0.8846,
+          "recall@5": 0.9615,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8462,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7657,
+          "file_acc@1": 0.8462,
+          "n": 26
+        }
+      }
+    },
+    "fixed+general": {
+      "recall@1": 0.52,
+      "recall@3": 0.92,
+      "recall@5": 0.96,
+      "recall@10": 1.0,
+      "file_recall@1": 0.84,
+      "file_recall@3": 1.0,
+      "file_recall@5": 1.0,
+      "file_recall@10": 1.0,
+      "mrr@10": 0.7152,
+      "file_acc@1": 0.84,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.5882,
+          "recall@3": 0.8824,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7457,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.4706,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.7647,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.6961,
+          "file_acc@1": 0.7647,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.5,
+          "recall@3": 0.875,
+          "recall@5": 0.9375,
+          "recall@10": 1.0,
+          "file_recall@1": 0.875,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7031,
+          "file_acc@1": 0.875,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 0.4286,
+          "recall@3": 0.5714,
+          "recall@5": 0.7143,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.5728,
+          "file_acc@1": 1.0,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.6471,
+          "recall@3": 0.9412,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7794,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.4615,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.7692,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7115,
+          "file_acc@1": 0.7692,
+          "n": 26
+        }
+      }
+    },
+    "fixed+bm25": {
+      "recall@1": 0.46,
+      "recall@3": 0.72,
+      "recall@5": 0.82,
+      "recall@10": 0.88,
+      "file_recall@1": 0.74,
+      "file_recall@3": 0.94,
+      "file_recall@5": 0.96,
+      "file_recall@10": 0.96,
+      "mrr@10": 0.6064,
+      "file_acc@1": 0.74,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.4706,
+          "recall@3": 0.7647,
+          "recall@5": 0.8824,
+          "recall@10": 0.8824,
+          "file_recall@1": 0.8235,
+          "file_recall@3": 0.9412,
+          "file_recall@5": 0.9412,
+          "file_recall@10": 0.9412,
+          "mrr@10": 0.602,
+          "file_acc@1": 0.8235,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.4118,
+          "recall@3": 0.7059,
+          "recall@5": 0.7647,
+          "recall@10": 0.8824,
+          "file_recall@1": 0.7059,
+          "file_recall@3": 0.9412,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.5907,
+          "file_acc@1": 0.7059,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.5,
+          "recall@3": 0.6875,
+          "recall@5": 0.8125,
+          "recall@10": 0.875,
+          "file_recall@1": 0.6875,
+          "file_recall@3": 0.9375,
+          "file_recall@5": 0.9375,
+          "file_recall@10": 0.9375,
+          "mrr@10": 0.6277,
+          "file_acc@1": 0.6875,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 0.5714,
+          "recall@3": 0.7143,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.6762,
+          "file_acc@1": 1.0,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.5294,
+          "recall@3": 0.7647,
+          "recall@5": 0.8824,
+          "recall@10": 0.8824,
+          "file_recall@1": 0.7647,
+          "file_recall@3": 0.8824,
+          "file_recall@5": 0.9412,
+          "file_recall@10": 0.9412,
+          "mrr@10": 0.6539,
+          "file_acc@1": 0.7647,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.3846,
+          "recall@3": 0.6923,
+          "recall@5": 0.7308,
+          "recall@10": 0.8462,
+          "file_recall@1": 0.6538,
+          "file_recall@3": 0.9615,
+          "file_recall@5": 0.9615,
+          "file_recall@10": 0.9615,
+          "mrr@10": 0.5565,
+          "file_acc@1": 0.6538,
+          "n": 26
+        }
+      }
+    },
+    "fixed+hybrid": {
+      "recall@1": 0.62,
+      "recall@3": 0.88,
+      "recall@5": 0.94,
+      "recall@10": 1.0,
+      "file_recall@1": 0.84,
+      "file_recall@3": 1.0,
+      "file_recall@5": 1.0,
+      "file_recall@10": 1.0,
+      "mrr@10": 0.7569,
+      "file_acc@1": 0.84,
+      "n": 50,
+      "by_repo": {
+        "requests": {
+          "recall@1": 0.6471,
+          "recall@3": 0.8824,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7751,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "flask": {
+          "recall@1": 0.5882,
+          "recall@3": 0.9412,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8235,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.75,
+          "file_acc@1": 0.8235,
+          "n": 17
+        },
+        "starlette": {
+          "recall@1": 0.625,
+          "recall@3": 0.8125,
+          "recall@5": 0.875,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8125,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7448,
+          "file_acc@1": 0.8125,
+          "n": 16
+        }
+      },
+      "by_type": {
+        "explain": {
+          "recall@1": 0.7143,
+          "recall@3": 0.8571,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "file_recall@1": 1.0,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.7905,
+          "file_acc@1": 1.0,
+          "n": 7
+        },
+        "how": {
+          "recall@1": 0.6471,
+          "recall@3": 0.8824,
+          "recall@5": 0.9412,
+          "recall@10": 1.0,
+          "file_recall@1": 0.8824,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.778,
+          "file_acc@1": 0.8824,
+          "n": 17
+        },
+        "locate": {
+          "recall@1": 0.5769,
+          "recall@3": 0.8846,
+          "recall@5": 0.9231,
+          "recall@10": 1.0,
+          "file_recall@1": 0.7692,
+          "file_recall@3": 1.0,
+          "file_recall@5": 1.0,
+          "file_recall@10": 1.0,
+          "mrr@10": 0.734,
+          "file_acc@1": 0.7692,
+          "n": 26
+        }
+      }
+    }
+  },
+  "skipped": {},
+  "per_question": [
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L76-L96",
+        "src/requests/auth.py:L99-L104",
+        "src/requests/auth.py:L25-L66"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L241-L283",
+        "src/requests/auth.py:L285-L303",
+        "src/requests/auth.py:L236-L239"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L282-L300",
+        "src/requests/sessions.py:L127-L157",
+        "src/requests/auth.py:L236-L239"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L204-L258",
+        "src/requests/utils.py:L41-L80",
+        "src/requests/sessions.py:L41-L58"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L997-L1024",
+        "src/requests/models.py:L740-L748",
+        "src/requests/models.py:L754-L767"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 3,
+      "top3": [
+        "src/requests/exceptions.py:L95-L96",
+        "src/requests/auth.py:L236-L239",
+        "src/requests/sessions.py:L159-L280"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L838-L861",
+        "src/requests/utils.py:L765-L823",
+        "src/requests/adapters.py:L546-L576"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L81-L120",
+        "src/requests/utils.py:L765-L823",
+        "src/requests/utils.py:L121-L123"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L13-L80",
+        "src/requests/structures.py:L83-L99",
+        "src/requests/structures.py:L1-L10"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L136-L203",
+        "src/requests/models.py:L494-L570",
+        "src/requests/auth.py:L1-L22"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L61-L88",
+        "src/requests/sessions.py:L457-L498",
+        "src/requests/sessions.py:L1-L40"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/adapters.py:L81-L87",
+        "src/requests/adapters.py:L304-L357",
+        "src/requests/adapters.py:L446-L493"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L789-L797",
+        "src/requests/models.py:L909-L945",
+        "src/requests/utils.py:L539-L561"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L799-L855",
+        "src/requests/models.py:L750-L752",
+        "src/requests/models.py:L890-L907"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L891-L897",
+        "src/requests/utils.py:L900-L911",
+        "src/requests/utils.py:L41-L80"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L285-L291",
+        "src/requests/cookies.py:L306-L319",
+        "src/requests/cookies.py:L251-L257"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L333-L353",
+        "src/requests/models.py:L776-L782",
+        "src/requests/models.py:L769-L774"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sessions.py:L288-L306",
+        "src/flask/sessions.py:L199-L205",
+        "src/flask/sessions.py:L320-L332"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L79-L217",
+        "src/flask/app.py:L1491-L1498",
+        "src/flask/cli.py:L1108-L1109"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/views.py:L78-L83",
+        "src/flask/app.py:L842-L865",
+        "src/flask/app.py:L867-L883"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/wrappers.py:L97-L112",
+        "src/flask/sansio/app.py:L597-L602",
+        "src/flask/sansio/blueprints.py:L273-L377"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L435-L457",
+        "src/flask/sansio/scaffold.py:L335-L365",
+        "src/flask/views.py:L85-L135"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L176-L227",
+        "src/flask/app.py:L966-L1090",
+        "src/flask/sansio/app.py:L932-L964"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L102-L124",
+        "src/flask/helpers.py:L35-L47",
+        "src/flask/config.py:L126-L188"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1233-L1258",
+        "src/flask/sansio/blueprints.py:L553-L561",
+        "src/flask/sansio/scaffold.py:L459-L484"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L774-L825",
+        "src/flask/sansio/app.py:L848-L881",
+        "src/flask/sansio/scaffold.py:L656-L698"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L1108-L1109",
+        "src/flask/__main__.py:L1-L3",
+        "src/flask/cli.py:L1104-L1105"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L299-L330",
+        "src/flask/helpers.py:L333-L372",
+        "src/flask/helpers.py:L1-L24"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 4,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1348-L1367",
+        "src/flask/ctx.py:L228-L235",
+        "src/flask/ctx.py:L110-L114"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/__init__.py:L138-L170",
+        "src/flask/json/provider.py:L189-L215",
+        "src/flask/json/provider.py:L89-L105"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": null,
+      "file_rank": 5,
+      "top3": [
+        "src/flask/sessions.py:L277-L277",
+        "src/flask/sessions.py:L1-L23",
+        "src/flask/sessions.py:L288-L306"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/views.py:L138-L191",
+        "src/flask/views.py:L1-L13",
+        "src/flask/views.py:L78-L83"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L687-L745",
+        "src/flask/helpers.py:L35-L47",
+        "src/flask/config.py:L102-L124"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L138-L150",
+        "src/flask/templating.py:L126-L135",
+        "src/flask/templating.py:L153-L162"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 2,
+      "top3": [
+        "starlette/requests.py:L161-L166",
+        "starlette/authentication.py:L135-L145",
+        "starlette/authentication.py:L109-L113"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L23-L27",
+        "starlette/authentication.py:L30-L102",
+        "starlette/authentication.py:L116-L118"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L106-L142",
+        "starlette/middleware/cors.py:L75-L93",
+        "starlette/middleware/cors.py:L150-L173"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L15-L85",
+        "starlette/middleware/sessions.py:L1-L12",
+        "starlette/requests.py:L154-L159"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L119-L120",
+        "starlette/routing.py:L123-L178",
+        "starlette/routing.py:L253-L269"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L253-L269",
+        "starlette/routing.py:L38-L41",
+        "starlette/routing.py:L756-L804"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L29-L29",
+        "starlette/middleware/gzip.py:L9-L26",
+        "starlette/middleware/gzip.py:L42-L44"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": null,
+      "file_rank": 2,
+      "top3": [
+        "starlette/routing.py:L105-L116",
+        "starlette/convertors.py:L33-L40",
+        "starlette/convertors.py:L79-L85"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L163-L179",
+        "starlette/staticfiles.py:L107-L113",
+        "starlette/staticfiles.py:L197-L215"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/formparsers.py:L48-L117",
+        "starlette/formparsers.py:L123-L147",
+        "starlette/formparsers.py:L228-L278"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/background.py:L17-L30",
+        "starlette/background.py:L33-L45",
+        "starlette/responses.py:L1-L22"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/applications.py:L144-L149",
+        "starlette/_exception_handler.py:L25-L31",
+        "starlette/_exception_handler.py:L1-L22"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L84-L110",
+        "starlette/applications.py:L119-L123",
+        "starlette/applications.py:L134-L142"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/requests.py:L249-L253",
+        "starlette/requests.py:L241-L247",
+        "starlette/requests.py:L199-L201"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/responses.py:L312-L320",
+        "starlette/staticfiles.py:L22-L40",
+        "starlette/staticfiles.py:L217-L244"
+      ]
+    },
+    {
+      "config": "ast+code",
+      "chunker": "ast",
+      "retriever": "code",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L49-L51",
+        "starlette/config.py:L129-L150",
+        "starlette/config.py:L55-L68"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L76-L96",
+        "src/requests/auth.py:L99-L104",
+        "src/requests/auth.py:L25-L66"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L241-L283",
+        "src/requests/auth.py:L285-L303",
+        "src/requests/auth.py:L107-L109"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L127-L157",
+        "src/requests/sessions.py:L282-L300",
+        "src/requests/sessions.py:L107-L125"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L204-L258",
+        "src/requests/sessions.py:L390-L449",
+        "src/requests/adapters.py:L396-L444"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L997-L1024",
+        "src/requests/models.py:L754-L767",
+        "src/requests/models.py:L727-L728"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 5,
+      "file_rank": 3,
+      "top3": [
+        "src/requests/exceptions.py:L95-L96",
+        "src/requests/auth.py:L236-L239",
+        "src/requests/sessions.py:L107-L125"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L838-L861",
+        "src/requests/utils.py:L765-L823",
+        "src/requests/adapters.py:L546-L576"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L765-L823",
+        "src/requests/utils.py:L121-L123",
+        "src/requests/utils.py:L826-L835"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L13-L80",
+        "src/requests/utils.py:L900-L911",
+        "src/requests/models.py:L483-L492"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L136-L203",
+        "src/requests/models.py:L494-L570",
+        "src/requests/models.py:L230-L257"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L61-L88",
+        "src/requests/sessions.py:L457-L498",
+        "src/requests/sessions.py:L750-L779"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/adapters.py:L304-L357",
+        "src/requests/adapters.py:L446-L493",
+        "src/requests/adapters.py:L396-L444"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L909-L945",
+        "src/requests/utils.py:L539-L561",
+        "src/requests/utils.py:L591-L627"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L799-L855",
+        "src/requests/models.py:L750-L752",
+        "src/requests/models.py:L857-L888"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L891-L897",
+        "src/requests/utils.py:L900-L911",
+        "src/requests/sessions.py:L107-L125"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L124-L137",
+        "src/requests/cookies.py:L23-L100",
+        "src/requests/cookies.py:L234-L240"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L333-L353",
+        "src/requests/auth.py:L236-L239",
+        "src/requests/sessions.py:L107-L125"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sessions.py:L53-L92",
+        "src/flask/sessions.py:L334-L379",
+        "src/flask/sessions.py:L199-L205"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1441-L1489",
+        "src/flask/app.py:L1491-L1498",
+        "src/flask/app.py:L509-L630"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/views.py:L78-L83",
+        "src/flask/app.py:L842-L865",
+        "src/flask/views.py:L16-L77"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/blueprints.py:L273-L377",
+        "src/flask/sansio/app.py:L569-L595",
+        "src/flask/sansio/blueprints.py:L255-L271"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 4,
+      "file_rank": 3,
+      "top3": [
+        "src/flask/views.py:L16-L77",
+        "src/flask/views.py:L85-L135",
+        "src/flask/sansio/scaffold.py:L435-L457"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L176-L227",
+        "src/flask/app.py:L966-L1090",
+        "src/flask/sansio/app.py:L932-L964"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L126-L188",
+        "src/flask/config.py:L102-L124",
+        "src/flask/app.py:L361-L399"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1233-L1258",
+        "src/flask/sansio/scaffold.py:L459-L484",
+        "src/flask/ctx.py:L117-L149"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L774-L825",
+        "src/flask/app.py:L707-L740",
+        "src/flask/app.py:L742-L772"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L981-L1027",
+        "src/flask/cli.py:L293-L358",
+        "src/flask/app.py:L509-L630"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L299-L330",
+        "src/flask/helpers.py:L333-L372",
+        "src/flask/debughelpers.py:L23-L47"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1348-L1367",
+        "src/flask/ctx.py:L238-L284",
+        "src/flask/ctx.py:L367-L394"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/__init__.py:L138-L170",
+        "src/flask/json/provider.py:L89-L105",
+        "src/flask/json/provider.py:L189-L215"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": 7,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/tag.py:L1-L40",
+        "src/flask/sessions.py:L53-L92",
+        "src/flask/json/provider.py:L124-L165"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/views.py:L138-L191",
+        "src/flask/app.py:L842-L865",
+        "src/flask/views.py:L78-L83"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L502-L511",
+        "src/flask/cli.py:L687-L745",
+        "src/flask/helpers.py:L35-L47"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L138-L150",
+        "src/flask/templating.py:L153-L162",
+        "src/flask/templating.py:L126-L135"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L109-L113",
+        "starlette/requests.py:L161-L166",
+        "starlette/requests.py:L168-L173"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L23-L27",
+        "starlette/requests.py:L168-L173",
+        "starlette/requests.py:L161-L166"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L106-L142",
+        "starlette/middleware/cors.py:L16-L73",
+        "starlette/middleware/cors.py:L75-L93"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L15-L85",
+        "starlette/requests.py:L154-L159",
+        "starlette/responses.py:L91-L128"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L119-L120",
+        "starlette/routing.py:L123-L178",
+        "starlette/routing.py:L385-L410"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L416-L447",
+        "starlette/routing.py:L253-L269",
+        "starlette/routing.py:L756-L804"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L9-L26",
+        "starlette/middleware/gzip.py:L46-L109",
+        "starlette/middleware/gzip.py:L30-L40"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/convertors.py:L79-L85",
+        "starlette/routing.py:L123-L178",
+        "starlette/convertors.py:L69-L76"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L163-L179",
+        "starlette/staticfiles.py:L107-L113",
+        "starlette/staticfiles.py:L197-L215"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/formparsers.py:L27-L33",
+        "starlette/requests.py:L255-L283",
+        "starlette/formparsers.py:L190-L223"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/responses.py:L322-L356",
+        "starlette/responses.py:L150-L162",
+        "starlette/background.py:L33-L45"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/applications.py:L144-L149",
+        "starlette/_exception_handler.py:L25-L31",
+        "starlette/_exception_handler.py:L34-L87"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L119-L123",
+        "starlette/applications.py:L134-L142",
+        "starlette/applications.py:L27-L56"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/requests.py:L249-L253",
+        "starlette/testclient.py:L230-L239",
+        "starlette/requests.py:L241-L247"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/responses.py:L312-L320",
+        "starlette/staticfiles.py:L217-L244",
+        "starlette/staticfiles.py:L181-L195"
+      ]
+    },
+    {
+      "config": "ast+general",
+      "chunker": "ast",
+      "retriever": "general",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L49-L51",
+        "starlette/config.py:L100-L115",
+        "starlette/config.py:L55-L68"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L99-L104",
+        "src/requests/auth.py:L76-L96",
+        "src/requests/sessions.py:L282-L300"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L107-L109",
+        "src/requests/auth.py:L285-L303",
+        "src/requests/auth.py:L241-L283"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L282-L300",
+        "src/requests/sessions.py:L127-L157",
+        "src/requests/sessions.py:L302-L331"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/sessions.py:L282-L300",
+        "src/requests/utils.py:L41-L80",
+        "src/requests/utils.py:L204-L258"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L997-L1024",
+        "src/requests/models.py:L754-L767",
+        "src/requests/sessions.py:L333-L353"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 10,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L390-L449",
+        "src/requests/adapters.py:L167-L201",
+        "src/requests/adapters.py:L240-L264"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": 8,
+      "file_rank": 6,
+      "top3": [
+        "src/requests/adapters.py:L446-L493",
+        "src/requests/adapters.py:L495-L534",
+        "src/requests/adapters.py:L546-L576"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L765-L823",
+        "src/requests/utils.py:L864-L888",
+        "src/requests/utils.py:L826-L835"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L13-L80",
+        "src/requests/utils.py:L900-L911",
+        "src/requests/sessions.py:L457-L498"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L230-L257",
+        "src/requests/auth.py:L1-L22",
+        "src/requests/models.py:L136-L203"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L457-L498",
+        "src/requests/models.py:L351-L377",
+        "src/requests/sessions.py:L750-L779"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/adapters.py:L304-L357",
+        "src/requests/adapters.py:L446-L493",
+        "src/requests/sessions.py:L390-L449"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L909-L945",
+        "src/requests/models.py:L658-L703",
+        "src/requests/models.py:L947-L978"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L750-L752",
+        "src/requests/models.py:L890-L907",
+        "src/requests/models.py:L857-L888"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L891-L897",
+        "src/requests/utils.py:L900-L911",
+        "src/requests/utils.py:L375-L403"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L124-L137",
+        "src/requests/utils.py:L478-L486",
+        "src/requests/cookies.py:L521-L539"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L333-L353",
+        "src/requests/sessions.py:L107-L125",
+        "src/requests/models.py:L41-L80"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/testing.py:L135-L183",
+        "src/flask/sessions.py:L288-L306",
+        "src/flask/sessions.py:L53-L92"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 6,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1369-L1383",
+        "src/flask/app.py:L79-L217",
+        "src/flask/sansio/app.py:L59-L138"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L842-L865",
+        "src/flask/views.py:L78-L83",
+        "src/flask/views.py:L16-L77"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/app.py:L569-L595",
+        "src/flask/sansio/blueprints.py:L273-L377",
+        "src/flask/sansio/blueprints.py:L119-L173"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L367-L433",
+        "src/flask/sansio/scaffold.py:L335-L365",
+        "src/flask/sansio/scaffold.py:L435-L457"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L176-L227",
+        "src/flask/app.py:L966-L1090",
+        "src/flask/sansio/blueprints.py:L41-L85"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L126-L188",
+        "src/flask/cli.py:L514-L542",
+        "src/flask/config.py:L259-L305"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 3,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L459-L484",
+        "src/flask/sansio/scaffold.py:L558-L581",
+        "src/flask/app.py:L1233-L1258"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L774-L825",
+        "src/flask/sansio/app.py:L549-L560",
+        "src/flask/app.py:L1-L40"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 5,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L509-L630",
+        "src/flask/cli.py:L864-L975",
+        "src/flask/cli.py:L981-L1027"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L299-L330",
+        "src/flask/sansio/scaffold.py:L558-L581",
+        "src/flask/sansio/scaffold.py:L507-L539"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1348-L1367",
+        "src/flask/ctx.py:L238-L284",
+        "src/flask/app.py:L1385-L1439"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/__init__.py:L138-L170",
+        "src/flask/json/provider.py:L89-L105",
+        "src/flask/app.py:L1092-L1231"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/json/provider.py:L124-L165",
+        "src/flask/json/tag.py:L219-L248",
+        "src/flask/sessions.py:L288-L306"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/views.py:L138-L191",
+        "src/flask/views.py:L16-L77",
+        "src/flask/app.py:L842-L865"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L687-L745",
+        "src/flask/cli.py:L514-L542",
+        "src/flask/cli.py:L479-L499"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L138-L150",
+        "src/flask/helpers.py:L127-L173",
+        "src/flask/templating.py:L153-L162"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L105-L106",
+        "starlette/middleware/authentication.py:L16-L53",
+        "starlette/middleware/authentication.py:L1-L13"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L30-L102",
+        "starlette/authentication.py:L116-L118",
+        "starlette/routing.py:L879-L897"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L106-L142",
+        "starlette/middleware/cors.py:L16-L73",
+        "starlette/middleware/cors.py:L75-L93"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L15-L85",
+        "starlette/requests.py:L154-L159",
+        "starlette/middleware/cors.py:L150-L173"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": null,
+      "file_rank": 2,
+      "top3": [
+        "starlette/schemas.py:L89-L96",
+        "starlette/routing.py:L756-L804",
+        "starlette/schemas.py:L38-L87"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L756-L804",
+        "starlette/routing.py:L416-L447",
+        "starlette/applications.py:L27-L56"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L9-L26",
+        "starlette/middleware/gzip.py:L29-L29",
+        "starlette/middleware/gzip.py:L46-L109"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/convertors.py:L79-L85",
+        "starlette/convertors.py:L55-L66",
+        "starlette/convertors.py:L69-L76"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L197-L215",
+        "starlette/staticfiles.py:L62-L91",
+        "starlette/staticfiles.py:L163-L179"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 5,
+      "file_rank": 3,
+      "top3": [
+        "starlette/requests.py:L255-L283",
+        "starlette/datastructures.py:L486-L503",
+        "starlette/formparsers.py:L1-L16"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/background.py:L33-L45",
+        "starlette/middleware/base.py:L101-L193",
+        "starlette/applications.py:L27-L56"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 6,
+      "file_rank": 6,
+      "top3": [
+        "starlette/applications.py:L27-L56",
+        "starlette/middleware/errors.py:L127-L138",
+        "starlette/applications.py:L178-L191"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 7,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L27-L56",
+        "starlette/middleware/errors.py:L127-L138",
+        "starlette/applications.py:L134-L142"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/requests.py:L249-L253",
+        "starlette/schemas.py:L98-L122",
+        "starlette/middleware/base.py:L21-L93"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/staticfiles.py:L217-L244",
+        "starlette/responses.py:L312-L320",
+        "starlette/staticfiles.py:L22-L40"
+      ]
+    },
+    {
+      "config": "ast+bm25",
+      "chunker": "ast",
+      "retriever": "bm25",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L129-L150",
+        "starlette/config.py:L100-L115",
+        "starlette/config.py:L117-L127"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L76-L96",
+        "src/requests/auth.py:L99-L104",
+        "src/requests/models.py:L588-L608"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L241-L283",
+        "src/requests/auth.py:L285-L303",
+        "src/requests/auth.py:L107-L109"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L282-L300",
+        "src/requests/sessions.py:L127-L157",
+        "src/requests/sessions.py:L302-L331"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L204-L258",
+        "src/requests/utils.py:L41-L80",
+        "src/requests/sessions.py:L282-L300"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L997-L1024",
+        "src/requests/models.py:L754-L767",
+        "src/requests/models.py:L740-L748"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/exceptions.py:L95-L96",
+        "src/requests/sessions.py:L159-L280",
+        "src/requests/sessions.py:L333-L353"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/adapters.py:L546-L576",
+        "src/requests/utils.py:L765-L823",
+        "src/requests/utils.py:L838-L861"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L765-L823",
+        "src/requests/utils.py:L864-L888",
+        "src/requests/utils.py:L826-L835"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L13-L80",
+        "src/requests/models.py:L483-L492",
+        "src/requests/utils.py:L900-L911"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L136-L203",
+        "src/requests/models.py:L230-L257",
+        "src/requests/auth.py:L1-L22"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L457-L498",
+        "src/requests/sessions.py:L750-L779",
+        "src/requests/sessions.py:L1-L40"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/adapters.py:L304-L357",
+        "src/requests/adapters.py:L446-L493",
+        "src/requests/adapters.py:L167-L201"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L909-L945",
+        "src/requests/utils.py:L539-L561",
+        "src/requests/models.py:L789-L797"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L750-L752",
+        "src/requests/models.py:L799-L855",
+        "src/requests/models.py:L890-L907"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L891-L897",
+        "src/requests/utils.py:L900-L911",
+        "src/requests/utils.py:L41-L80"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L124-L137",
+        "src/requests/utils.py:L467-L475",
+        "src/requests/cookies.py:L176-L193"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L333-L353",
+        "src/requests/sessions.py:L107-L125",
+        "src/requests/models.py:L769-L774"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sessions.py:L288-L306",
+        "src/flask/sessions.py:L320-L332",
+        "src/flask/sessions.py:L53-L92"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L79-L217",
+        "src/flask/app.py:L1491-L1498",
+        "src/flask/app.py:L1441-L1489"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L842-L865",
+        "src/flask/views.py:L78-L83",
+        "src/flask/views.py:L16-L77"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/blueprints.py:L273-L377",
+        "src/flask/sansio/blueprints.py:L119-L173",
+        "src/flask/sansio/app.py:L569-L595"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L435-L457",
+        "src/flask/sansio/scaffold.py:L335-L365",
+        "src/flask/sansio/scaffold.py:L367-L433"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L176-L227",
+        "src/flask/app.py:L966-L1090",
+        "src/flask/sansio/app.py:L932-L964"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L126-L188",
+        "src/flask/config.py:L102-L124",
+        "src/flask/config.py:L50-L93"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L459-L484",
+        "src/flask/app.py:L1233-L1258",
+        "src/flask/sansio/blueprints.py:L553-L561"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L774-L825",
+        "src/flask/app.py:L707-L740",
+        "src/flask/sansio/app.py:L848-L881"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L41-L91",
+        "src/flask/app.py:L509-L630",
+        "src/flask/cli.py:L981-L1027"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L299-L330",
+        "src/flask/helpers.py:L333-L372",
+        "src/flask/__init__.py:L1-L40"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1348-L1367",
+        "src/flask/ctx.py:L367-L394",
+        "src/flask/ctx.py:L238-L284"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/__init__.py:L138-L170",
+        "src/flask/json/provider.py:L89-L105",
+        "src/flask/json/provider.py:L124-L165"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": 4,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/sessions.py:L288-L306",
+        "src/flask/json/tag.py:L1-L40",
+        "src/flask/json/tag.py:L41-L57"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/views.py:L138-L191",
+        "src/flask/views.py:L16-L77",
+        "src/flask/app.py:L842-L865"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L687-L745",
+        "src/flask/helpers.py:L35-L47",
+        "src/flask/cli.py:L479-L499"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L138-L150",
+        "src/flask/templating.py:L153-L162",
+        "src/flask/templating.py:L126-L135"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L109-L113",
+        "starlette/authentication.py:L135-L145",
+        "starlette/middleware/authentication.py:L1-L13"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L30-L102",
+        "starlette/authentication.py:L116-L118",
+        "starlette/authentication.py:L23-L27"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L106-L142",
+        "starlette/middleware/cors.py:L75-L93",
+        "starlette/middleware/cors.py:L16-L73"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L15-L85",
+        "starlette/requests.py:L154-L159",
+        "starlette/responses.py:L91-L128"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 5,
+      "file_rank": 3,
+      "top3": [
+        "starlette/schemas.py:L89-L96",
+        "starlette/_utils.py:L92-L95",
+        "starlette/routing.py:L253-L269"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L756-L804",
+        "starlette/routing.py:L416-L447",
+        "starlette/routing.py:L253-L269"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L29-L29",
+        "starlette/middleware/gzip.py:L9-L26",
+        "starlette/middleware/gzip.py:L42-L44"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/convertors.py:L79-L85",
+        "starlette/schemas.py:L89-L96",
+        "starlette/convertors.py:L69-L76"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L197-L215",
+        "starlette/staticfiles.py:L163-L179",
+        "starlette/staticfiles.py:L62-L91"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/formparsers.py:L48-L117",
+        "starlette/requests.py:L255-L283",
+        "starlette/formparsers.py:L123-L147"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/background.py:L33-L45",
+        "starlette/background.py:L17-L30",
+        "starlette/responses.py:L150-L162"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/applications.py:L178-L191",
+        "starlette/_exception_handler.py:L25-L31",
+        "starlette/middleware/errors.py:L127-L138"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L119-L123",
+        "starlette/applications.py:L134-L142",
+        "starlette/applications.py:L27-L56"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/requests.py:L249-L253",
+        "starlette/requests.py:L241-L247",
+        "starlette/requests.py:L221-L239"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/responses.py:L312-L320",
+        "starlette/staticfiles.py:L217-L244",
+        "starlette/staticfiles.py:L22-L40"
+      ]
+    },
+    {
+      "config": "ast+hybrid",
+      "chunker": "ast",
+      "retriever": "hybrid",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L129-L150",
+        "starlette/config.py:L100-L115",
+        "starlette/config.py:L92-L98"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L61-L100",
+        "src/requests/auth.py:L1-L40",
+        "src/requests/auth.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L241-L280",
+        "src/requests/auth.py:L211-L250",
+        "src/requests/auth.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/utils.py:L1051-L1090",
+        "src/requests/sessions.py:L121-L160",
+        "src/requests/auth.py:L241-L280"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L211-L250",
+        "src/requests/utils.py:L181-L220",
+        "src/requests/utils.py:L241-L280"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 9,
+      "file_rank": 9,
+      "top3": [
+        "src/requests/exceptions.py:L1-L40",
+        "src/requests/status_codes.py:L31-L70",
+        "src/requests/status_codes.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L181-L220",
+        "src/requests/sessions.py:L151-L190",
+        "src/requests/models.py:L781-L820"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L841-L880",
+        "src/requests/utils.py:L781-L820",
+        "src/requests/utils.py:L811-L850"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L811-L850",
+        "src/requests/utils.py:L751-L790",
+        "src/requests/utils.py:L781-L820"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L61-L99",
+        "src/requests/structures.py:L1-L40",
+        "src/requests/structures.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L181-L220",
+        "src/requests/models.py:L121-L160",
+        "src/requests/models.py:L541-L580"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L31-L70",
+        "src/requests/sessions.py:L61-L100",
+        "src/requests/sessions.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/adapters.py:L331-L370",
+        "src/requests/adapters.py:L301-L340",
+        "src/requests/adapters.py:L421-L460"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L541-L580",
+        "src/requests/utils.py:L571-L610",
+        "src/requests/utils.py:L601-L640"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L841-L880",
+        "src/requests/models.py:L811-L850",
+        "src/requests/models.py:L871-L910"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L871-L910",
+        "src/requests/utils.py:L901-L940",
+        "src/requests/utils.py:L211-L250"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L91-L130",
+        "src/requests/cookies.py:L271-L310",
+        "src/requests/cookies.py:L301-L340"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L331-L370",
+        "src/requests/sessions.py:L121-L160",
+        "src/requests/sessions.py:L601-L640"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sessions.py:L211-L250",
+        "src/flask/sessions.py:L181-L220",
+        "src/flask/sessions.py:L241-L280"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 8,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/cli.py:L931-L970",
+        "src/flask/app.py:L91-L130",
+        "src/flask/app.py:L571-L610"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/views.py:L1-L40",
+        "src/flask/app.py:L841-L880",
+        "src/flask/app.py:L1231-L1270"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/blueprints.py:L271-L310",
+        "src/flask/sansio/blueprints.py:L301-L340",
+        "src/flask/sansio/blueprints.py:L331-L370"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 5,
+      "file_rank": 5,
+      "top3": [
+        "src/flask/views.py:L61-L100",
+        "src/flask/views.py:L31-L70",
+        "src/flask/views.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1021-L1060",
+        "src/flask/app.py:L961-L1000",
+        "src/flask/helpers.py:L181-L220"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L91-L130",
+        "src/flask/config.py:L61-L100",
+        "src/flask/config.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1231-L1270",
+        "src/flask/app.py:L1201-L1240",
+        "src/flask/app.py:L871-L910"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L811-L850",
+        "src/flask/app.py:L781-L820",
+        "src/flask/sansio/app.py:L841-L880"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/__main__.py:L1-L3",
+        "src/flask/cli.py:L31-L70",
+        "src/flask/app.py:L571-L610"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L331-L370",
+        "src/flask/helpers.py:L301-L340",
+        "src/flask/helpers.py:L271-L310"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 5,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1351-L1390",
+        "src/flask/ctx.py:L211-L250",
+        "src/flask/ctx.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/provider.py:L91-L130",
+        "src/flask/json/__init__.py:L121-L160",
+        "src/flask/json/provider.py:L181-L215"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": 9,
+      "file_rank": 6,
+      "top3": [
+        "src/flask/sessions.py:L271-L310",
+        "src/flask/sessions.py:L301-L340",
+        "src/flask/sessions.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/views.py:L181-L191",
+        "src/flask/views.py:L1-L40",
+        "src/flask/views.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L721-L760",
+        "src/flask/config.py:L61-L100",
+        "src/flask/cli.py:L691-L730"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L121-L160",
+        "src/flask/templating.py:L91-L130",
+        "src/flask/templating.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L91-L130",
+        "starlette/middleware/authentication.py:L31-L53",
+        "starlette/authentication.py:L121-L155"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L1-L40",
+        "starlette/authentication.py:L31-L70",
+        "starlette/authentication.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L91-L130",
+        "starlette/middleware/cors.py:L61-L100",
+        "starlette/middleware/cors.py:L151-L178"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L61-L85",
+        "starlette/middleware/sessions.py:L1-L40",
+        "starlette/middleware/sessions.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L121-L160",
+        "starlette/routing.py:L151-L190",
+        "starlette/routing.py:L241-L280"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L781-L820",
+        "starlette/routing.py:L751-L790",
+        "starlette/routing.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L61-L100",
+        "starlette/middleware/gzip.py:L31-L70",
+        "starlette/middleware/gzip.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/convertors.py:L31-L70",
+        "starlette/convertors.py:L61-L89",
+        "starlette/convertors.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L91-L130",
+        "starlette/staticfiles.py:L121-L160",
+        "starlette/staticfiles.py:L181-L220"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/formparsers.py:L61-L100",
+        "starlette/formparsers.py:L211-L250",
+        "starlette/formparsers.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/background.py:L31-L45",
+        "starlette/background.py:L1-L40",
+        "starlette/responses.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/_exception_handler.py:L61-L87",
+        "starlette/_exception_handler.py:L1-L40",
+        "starlette/middleware/exceptions.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L61-L100",
+        "starlette/applications.py:L121-L160",
+        "starlette/applications.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/requests.py:L211-L250",
+        "starlette/requests.py:L241-L280",
+        "starlette/middleware/wsgi.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/responses.py:L301-L340",
+        "starlette/staticfiles.py:L211-L244",
+        "starlette/staticfiles.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+code",
+      "chunker": "fixed",
+      "retriever": "code",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L91-L130",
+        "starlette/config.py:L121-L150",
+        "starlette/config.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L61-L100",
+        "src/requests/auth.py:L1-L40",
+        "src/requests/sessions.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L241-L280",
+        "src/requests/auth.py:L211-L250",
+        "src/requests/auth.py:L271-L310"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L121-L160",
+        "src/requests/sessions.py:L271-L310",
+        "src/requests/sessions.py:L301-L340"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L241-L280",
+        "src/requests/utils.py:L211-L250",
+        "src/requests/utils.py:L181-L220"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 5,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L751-L790",
+        "src/requests/adapters.py:L361-L400",
+        "src/requests/models.py:L661-L700"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/models.py:L61-L100",
+        "src/requests/sessions.py:L151-L190",
+        "src/requests/sessions.py:L421-L460"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L841-L880",
+        "src/requests/adapters.py:L541-L580",
+        "src/requests/utils.py:L811-L850"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L811-L850",
+        "src/requests/utils.py:L871-L910",
+        "src/requests/utils.py:L751-L790"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L1-L40",
+        "src/requests/utils.py:L901-L940",
+        "src/requests/structures.py:L61-L99"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L541-L580",
+        "src/requests/models.py:L181-L220",
+        "src/requests/api.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L481-L520",
+        "src/requests/sessions.py:L61-L100",
+        "src/requests/sessions.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/adapters.py:L301-L340",
+        "src/requests/adapters.py:L421-L460",
+        "src/requests/adapters.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L901-L940",
+        "src/requests/models.py:L931-L970",
+        "src/requests/utils.py:L601-L640"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 7,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L901-L940",
+        "src/requests/models.py:L841-L880",
+        "src/requests/models.py:L661-L700"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/sessions.py:L121-L160",
+        "src/requests/utils.py:L871-L910",
+        "src/requests/cookies.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L121-L160",
+        "src/requests/cookies.py:L421-L460",
+        "src/requests/models.py:L691-L730"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L331-L370",
+        "src/requests/sessions.py:L91-L130",
+        "src/requests/sessions.py:L301-L340"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sessions.py:L211-L250",
+        "src/flask/sessions.py:L331-L370",
+        "src/flask/sessions.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1441-L1480",
+        "src/flask/cli.py:L31-L70",
+        "src/flask/cli.py:L931-L970"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L841-L880",
+        "src/flask/views.py:L91-L130",
+        "src/flask/views.py:L181-L191"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/app.py:L571-L610",
+        "src/flask/sansio/blueprints.py:L271-L310",
+        "src/flask/sansio/blueprints.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 3,
+      "top3": [
+        "src/flask/views.py:L31-L70",
+        "src/flask/views.py:L61-L100",
+        "src/flask/sansio/scaffold.py:L331-L370"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1051-L1090",
+        "src/flask/helpers.py:L181-L220",
+        "src/flask/app.py:L961-L1000"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L121-L160",
+        "src/flask/config.py:L61-L100",
+        "src/flask/config.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1231-L1270",
+        "src/flask/sansio/scaffold.py:L481-L520",
+        "src/flask/sansio/scaffold.py:L451-L490"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L811-L850",
+        "src/flask/app.py:L751-L790",
+        "src/flask/app.py:L781-L820"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L961-L1000",
+        "src/flask/app.py:L571-L610",
+        "src/flask/cli.py:L331-L370"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L301-L340",
+        "src/flask/helpers.py:L331-L370",
+        "src/flask/debughelpers.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1351-L1390",
+        "src/flask/ctx.py:L241-L280",
+        "src/flask/app.py:L1321-L1360"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/provider.py:L91-L130",
+        "src/flask/json/__init__.py:L121-L160",
+        "src/flask/app.py:L1111-L1150"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 3,
+      "top3": [
+        "src/flask/sessions.py:L301-L340",
+        "src/flask/sessions.py:L211-L250",
+        "src/flask/json/tag.py:L211-L250"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L841-L880",
+        "src/flask/views.py:L181-L191",
+        "src/flask/views.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L481-L520",
+        "src/flask/cli.py:L691-L730",
+        "src/flask/config.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L121-L160",
+        "src/flask/templating.py:L151-L190",
+        "src/flask/templating.py:L181-L219"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/authentication.py:L31-L53",
+        "starlette/middleware/cors.py:L61-L100",
+        "starlette/authentication.py:L121-L155"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L91-L130",
+        "starlette/authentication.py:L31-L70",
+        "starlette/authentication.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L91-L130",
+        "starlette/middleware/cors.py:L61-L100",
+        "starlette/middleware/cors.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L61-L85",
+        "starlette/middleware/sessions.py:L31-L70",
+        "starlette/responses.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L121-L160",
+        "starlette/routing.py:L151-L190",
+        "starlette/schemas.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L751-L790",
+        "starlette/routing.py:L781-L820",
+        "starlette/routing.py:L391-L430"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L61-L100",
+        "starlette/middleware/gzip.py:L31-L70",
+        "starlette/middleware/gzip.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/routing.py:L121-L160",
+        "starlette/convertors.py:L61-L89",
+        "starlette/routing.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L181-L220",
+        "starlette/staticfiles.py:L211-L244",
+        "starlette/staticfiles.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/formparsers.py:L31-L70",
+        "starlette/formparsers.py:L211-L250",
+        "starlette/formparsers.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/responses.py:L241-L280",
+        "starlette/middleware/base.py:L1-L40",
+        "starlette/background.py:L31-L45"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/_exception_handler.py:L31-L70",
+        "starlette/_exception_handler.py:L61-L87",
+        "starlette/middleware/exceptions.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 6,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L121-L160",
+        "starlette/applications.py:L31-L70",
+        "starlette/applications.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/requests.py:L241-L280",
+        "starlette/requests.py:L31-L70",
+        "starlette/testclient.py:L331-L370"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/staticfiles.py:L211-L244",
+        "starlette/responses.py:L301-L340",
+        "starlette/staticfiles.py:L181-L220"
+      ]
+    },
+    {
+      "config": "fixed+general",
+      "chunker": "fixed",
+      "retriever": "general",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L61-L100",
+        "starlette/config.py:L91-L130",
+        "starlette/config.py:L121-L150"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L61-L100",
+        "src/requests/auth.py:L91-L130",
+        "src/requests/sessions.py:L271-L310"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L91-L130",
+        "src/requests/auth.py:L271-L310",
+        "src/requests/auth.py:L241-L280"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L271-L310",
+        "src/requests/sessions.py:L301-L340",
+        "src/requests/sessions.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 5,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/sessions.py:L271-L310",
+        "src/requests/utils.py:L31-L70",
+        "src/requests/utils.py:L181-L220"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L961-L1000",
+        "src/requests/models.py:L751-L790",
+        "src/requests/models.py:L991-L1030"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": null,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L421-L460",
+        "src/requests/adapters.py:L151-L190",
+        "src/requests/sessions.py:L391-L430"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": null,
+      "file_rank": null,
+      "top3": [
+        "src/requests/adapters.py:L601-L640",
+        "src/requests/adapters.py:L541-L580",
+        "src/requests/api.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L751-L790",
+        "src/requests/utils.py:L781-L820",
+        "src/requests/utils.py:L871-L910"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L1-L40",
+        "src/requests/structures.py:L61-L99",
+        "src/requests/sessions.py:L481-L520"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L541-L580",
+        "src/requests/models.py:L211-L250",
+        "src/requests/models.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L451-L490",
+        "src/requests/sessions.py:L571-L610",
+        "src/requests/sessions.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/requests/sessions.py:L391-L430",
+        "src/requests/adapters.py:L301-L340",
+        "src/requests/adapters.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L661-L700",
+        "src/requests/models.py:L931-L970",
+        "src/requests/models.py:L901-L940"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 5,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L841-L880",
+        "src/requests/models.py:L871-L910",
+        "src/requests/models.py:L901-L940"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L871-L910",
+        "src/requests/utils.py:L901-L940",
+        "src/requests/utils.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L121-L160",
+        "src/requests/cookies.py:L511-L550",
+        "src/requests/cookies.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L331-L370",
+        "src/requests/models.py:L61-L100",
+        "src/requests/sessions.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sessions.py:L271-L310",
+        "src/flask/sessions.py:L31-L70",
+        "src/flask/testing.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 6,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1351-L1390",
+        "src/flask/app.py:L1381-L1420",
+        "src/flask/app.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L841-L880",
+        "src/flask/views.py:L1-L40",
+        "src/flask/views.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/app.py:L361-L400",
+        "src/flask/sansio/app.py:L571-L610",
+        "src/flask/sansio/blueprints.py:L271-L310"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L361-L400",
+        "src/flask/sansio/scaffold.py:L331-L370",
+        "src/flask/sansio/scaffold.py:L391-L430"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L181-L220",
+        "src/flask/app.py:L961-L1000",
+        "src/flask/app.py:L991-L1030"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L91-L130",
+        "src/flask/config.py:L121-L160",
+        "src/flask/cli.py:L511-L550"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L451-L490",
+        "src/flask/app.py:L1231-L1270",
+        "src/flask/sansio/scaffold.py:L541-L580"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L781-L820",
+        "src/flask/app.py:L751-L790",
+        "src/flask/app.py:L421-L460"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": null,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L511-L550",
+        "src/flask/cli.py:L961-L1000",
+        "src/flask/sansio/app.py:L361-L400"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": null,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/sansio/app.py:L361-L400",
+        "src/flask/helpers.py:L271-L310",
+        "src/flask/helpers.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 8,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1351-L1390",
+        "src/flask/ctx.py:L211-L250",
+        "src/flask/app.py:L1381-L1420"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/__init__.py:L121-L160",
+        "src/flask/json/provider.py:L61-L100",
+        "src/flask/json/provider.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": 4,
+      "file_rank": 4,
+      "top3": [
+        "src/flask/json/provider.py:L121-L160",
+        "src/flask/sessions.py:L271-L310",
+        "src/flask/json/provider.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/views.py:L151-L190",
+        "src/flask/views.py:L121-L160",
+        "src/flask/views.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L511-L550",
+        "src/flask/cli.py:L691-L730",
+        "src/flask/cli.py:L481-L520"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L121-L160",
+        "src/flask/helpers.py:L121-L160",
+        "src/flask/__init__.py:L31-L60"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/authentication.py:L1-L40",
+        "starlette/authentication.py:L91-L130",
+        "starlette/_exception_handler.py:L61-L87"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L1-L40",
+        "starlette/authentication.py:L31-L70",
+        "starlette/authentication.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L31-L70",
+        "starlette/middleware/cors.py:L61-L100",
+        "starlette/middleware/cors.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L61-L85",
+        "starlette/requests.py:L151-L190",
+        "starlette/requests.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": null,
+      "file_rank": 3,
+      "top3": [
+        "starlette/schemas.py:L91-L130",
+        "starlette/schemas.py:L61-L100",
+        "starlette/routing.py:L781-L820"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L751-L790",
+        "starlette/routing.py:L781-L820",
+        "starlette/applications.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L1-L40",
+        "starlette/middleware/gzip.py:L31-L70",
+        "starlette/middleware/gzip.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/convertors.py:L61-L89",
+        "starlette/convertors.py:L31-L70",
+        "starlette/routing.py:L631-L670"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 5,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L31-L70",
+        "starlette/staticfiles.py:L181-L220",
+        "starlette/staticfiles.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 7,
+      "file_rank": 2,
+      "top3": [
+        "starlette/requests.py:L241-L280",
+        "starlette/formparsers.py:L1-L40",
+        "starlette/formparsers.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/background.py:L1-L40",
+        "starlette/background.py:L31-L45",
+        "starlette/middleware/base.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": null,
+      "file_rank": null,
+      "top3": [
+        "starlette/middleware/errors.py:L121-L160",
+        "starlette/applications.py:L31-L70",
+        "starlette/endpoints.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 5,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L31-L70",
+        "starlette/applications.py:L1-L40",
+        "starlette/routing.py:L661-L700"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/schemas.py:L91-L130",
+        "starlette/requests.py:L241-L280",
+        "starlette/schemas.py:L121-L150"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/staticfiles.py:L211-L244",
+        "starlette/responses.py:L301-L340",
+        "starlette/staticfiles.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+bm25",
+      "chunker": "fixed",
+      "retriever": "bm25",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L91-L130",
+        "starlette/config.py:L61-L100",
+        "starlette/config.py:L121-L150"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-01",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L61-L100",
+        "src/requests/auth.py:L91-L130",
+        "src/requests/auth.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-02",
+      "repo": "requests",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/auth.py:L91-L130",
+        "src/requests/auth.py:L241-L280",
+        "src/requests/auth.py:L271-L310"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-03",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L121-L160",
+        "src/requests/sessions.py:L271-L310",
+        "src/requests/sessions.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-04",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L181-L220",
+        "src/requests/utils.py:L211-L250",
+        "src/requests/utils.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-05",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L991-L1030",
+        "src/requests/models.py:L751-L790",
+        "src/requests/models.py:L961-L1000"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-06",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 3,
+      "top3": [
+        "src/requests/exceptions.py:L61-L100",
+        "src/requests/exceptions.py:L91-L130",
+        "src/requests/sessions.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-07",
+      "repo": "requests",
+      "type": "how",
+      "rank": 7,
+      "file_rank": 3,
+      "top3": [
+        "src/requests/adapters.py:L541-L580",
+        "src/requests/adapters.py:L511-L550",
+        "src/requests/utils.py:L781-L820"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-08",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L751-L790",
+        "src/requests/utils.py:L811-L850",
+        "src/requests/utils.py:L781-L820"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-09",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/structures.py:L1-L40",
+        "src/requests/structures.py:L61-L99",
+        "src/requests/structures.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-10",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L541-L580",
+        "src/requests/models.py:L121-L160",
+        "src/requests/models.py:L181-L220"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-11",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L451-L490",
+        "src/requests/sessions.py:L571-L610",
+        "src/requests/sessions.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-12",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/adapters.py:L301-L340",
+        "src/requests/adapters.py:L421-L460",
+        "src/requests/adapters.py:L331-L370"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-13",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L901-L940",
+        "src/requests/utils.py:L541-L580",
+        "src/requests/models.py:L931-L970"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-14",
+      "repo": "requests",
+      "type": "explain",
+      "rank": 5,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/models.py:L841-L880",
+        "src/requests/models.py:L871-L910",
+        "src/requests/models.py:L901-L940"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-15",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/utils.py:L871-L910",
+        "src/requests/utils.py:L901-L940",
+        "src/requests/utils.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-16",
+      "repo": "requests",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/cookies.py:L91-L130",
+        "src/requests/cookies.py:L121-L160",
+        "src/requests/cookies.py:L511-L550"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "req-17",
+      "repo": "requests",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/requests/sessions.py:L331-L370",
+        "src/requests/models.py:L61-L100",
+        "src/requests/sessions.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-01",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sessions.py:L271-L310",
+        "src/flask/sessions.py:L31-L70",
+        "src/flask/sessions.py:L301-L340"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-02",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L91-L130",
+        "src/flask/cli.py:L931-L970",
+        "src/flask/app.py:L1441-L1480"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-03",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L841-L880",
+        "src/flask/views.py:L1-L40",
+        "src/flask/views.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-04",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/blueprints.py:L271-L310",
+        "src/flask/sansio/blueprints.py:L121-L160",
+        "src/flask/sansio/app.py:L571-L610"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-05",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/sansio/scaffold.py:L361-L400",
+        "src/flask/sansio/scaffold.py:L331-L370",
+        "src/flask/views.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-06",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L181-L220",
+        "src/flask/app.py:L961-L1000",
+        "src/flask/app.py:L1021-L1060"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-07",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/config.py:L91-L130",
+        "src/flask/config.py:L121-L160",
+        "src/flask/config.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-08",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L1231-L1270",
+        "src/flask/app.py:L1201-L1240",
+        "src/flask/sansio/scaffold.py:L451-L490"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-09",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/app.py:L781-L820",
+        "src/flask/app.py:L811-L850",
+        "src/flask/app.py:L751-L790"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-10",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 3,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L571-L610",
+        "src/flask/cli.py:L961-L1000",
+        "src/flask/cli.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-11",
+      "repo": "flask",
+      "type": "how",
+      "rank": 2,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/helpers.py:L271-L310",
+        "src/flask/helpers.py:L301-L340",
+        "src/flask/helpers.py:L331-L370"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-12",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 4,
+      "file_rank": 2,
+      "top3": [
+        "src/flask/app.py:L1351-L1390",
+        "src/flask/ctx.py:L211-L250",
+        "src/flask/ctx.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-13",
+      "repo": "flask",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/json/__init__.py:L121-L160",
+        "src/flask/json/provider.py:L91-L130",
+        "src/flask/json/provider.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-14",
+      "repo": "flask",
+      "type": "how",
+      "rank": 3,
+      "file_rank": 3,
+      "top3": [
+        "src/flask/sessions.py:L271-L310",
+        "src/flask/sessions.py:L301-L340",
+        "src/flask/json/tag.py:L211-L250"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-15",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/views.py:L151-L190",
+        "src/flask/views.py:L1-L40",
+        "src/flask/views.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-16",
+      "repo": "flask",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/cli.py:L691-L730",
+        "src/flask/cli.py:L721-L760",
+        "src/flask/cli.py:L481-L520"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "fl-17",
+      "repo": "flask",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "src/flask/templating.py:L121-L160",
+        "src/flask/templating.py:L91-L130",
+        "src/flask/templating.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-01",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L91-L130",
+        "starlette/middleware/authentication.py:L1-L40",
+        "starlette/middleware/authentication.py:L31-L53"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-02",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/authentication.py:L1-L40",
+        "starlette/authentication.py:L31-L70",
+        "starlette/authentication.py:L91-L130"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-03",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/cors.py:L91-L130",
+        "starlette/middleware/cors.py:L61-L100",
+        "starlette/middleware/cors.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-04",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/sessions.py:L61-L85",
+        "starlette/middleware/sessions.py:L1-L40",
+        "starlette/middleware/sessions.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-05",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 6,
+      "file_rank": 2,
+      "top3": [
+        "starlette/schemas.py:L61-L100",
+        "starlette/routing.py:L781-L820",
+        "starlette/convertors.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-06",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/routing.py:L751-L790",
+        "starlette/routing.py:L781-L820",
+        "starlette/routing.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-07",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/middleware/gzip.py:L1-L40",
+        "starlette/middleware/gzip.py:L61-L100",
+        "starlette/middleware/gzip.py:L31-L70"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-08",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/convertors.py:L61-L89",
+        "starlette/convertors.py:L31-L70",
+        "starlette/routing.py:L121-L160"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-09",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 4,
+      "file_rank": 1,
+      "top3": [
+        "starlette/staticfiles.py:L181-L220",
+        "starlette/staticfiles.py:L31-L70",
+        "starlette/staticfiles.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-10",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 6,
+      "file_rank": 1,
+      "top3": [
+        "starlette/formparsers.py:L31-L70",
+        "starlette/formparsers.py:L1-L40",
+        "starlette/requests.py:L241-L280"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-11",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/background.py:L31-L45",
+        "starlette/background.py:L1-L40",
+        "starlette/responses.py:L151-L190"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-12",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/middleware/errors.py:L121-L160",
+        "starlette/_exception_handler.py:L1-L40",
+        "starlette/_exception_handler.py:L61-L87"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-13",
+      "repo": "starlette",
+      "type": "explain",
+      "rank": 3,
+      "file_rank": 1,
+      "top3": [
+        "starlette/applications.py:L1-L40",
+        "starlette/applications.py:L31-L70",
+        "starlette/applications.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-14",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/requests.py:L241-L280",
+        "starlette/requests.py:L211-L250",
+        "starlette/middleware/base.py:L61-L100"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-15",
+      "repo": "starlette",
+      "type": "locate",
+      "rank": 2,
+      "file_rank": 2,
+      "top3": [
+        "starlette/staticfiles.py:L211-L244",
+        "starlette/responses.py:L301-L340",
+        "starlette/staticfiles.py:L1-L40"
+      ]
+    },
+    {
+      "config": "fixed+hybrid",
+      "chunker": "fixed",
+      "retriever": "hybrid",
+      "id": "st-16",
+      "repo": "starlette",
+      "type": "how",
+      "rank": 1,
+      "file_rank": 1,
+      "top3": [
+        "starlette/config.py:L91-L130",
+        "starlette/config.py:L121-L150",
+        "starlette/config.py:L61-L100"
+      ]
+    }
+  ],
+  "hit_rule": "same file and overlap >= 50% of the smaller span"
+}
