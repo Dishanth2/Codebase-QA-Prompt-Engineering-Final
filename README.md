@@ -13,6 +13,7 @@ Point the assistant at a GitHub repository and ask things like *"where is authen
 | **Recall@k**, **LLM-as-Judge correctness**, **file-location accuracy** | `eval/` → `results/REPORT.md` |
 | Web app for the demo (ask, live agent trace, compare retrieval, evaluation dashboard, add repos) | `server/`, `web/` |
 
+
 ## Quick start
 
 ```bash
